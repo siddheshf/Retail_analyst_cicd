@@ -27,4 +27,4 @@ if __name__=='__main__' :
     
     aggregated_results.show()
     
-    print("end of main")
+    print("end of main in application_main.py file")
