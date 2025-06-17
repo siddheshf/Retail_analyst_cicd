@@ -1,12 +1,6 @@
 pipeline {
     agent any
-    
-    environment {
-        LABS = credentials('labcreds')
-        JAVA_HOME = '/opt/bitnami/java'  // Set your JAVA_HOME path here.
-        PATH = "${env.JAVA_HOME}/bin:${env.PATH}"  // Add Java binaries to PATH
-    }
-    
+
     stages {
         stage('Deploy') {
             steps {
