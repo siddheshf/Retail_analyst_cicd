@@ -21,6 +21,9 @@ pipeline {
             		which python3
             		python3 --version
             		python3 -m venv retail_pipeline_venv
+
+			which sudo || echo "sudo is NOT available"
+            		sudo -n true && echo "sudo is available without password" || echo "sudo requires a password or is not permitted"
 			
 			# Try installing venv if it's missing
             		if ! python3 -m venv --help > /dev/null 2>&1; then
