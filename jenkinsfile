@@ -22,7 +22,10 @@ pipeline {
                 echo "In Package stage"
             }
         }
+        stage('Last') {
+            steps {
+                echo "In last step of jenkins deployment"
+            }
+        }
     }
 }
-
-
