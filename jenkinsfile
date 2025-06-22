@@ -10,7 +10,7 @@ pipeline {
             steps {
                 script {
 			sudo apt update
-                    	sudo apt install -y python3.11-venv
+                    	sudo apt install -y python 3.11-venv
                     	// Create a virtual environment with the project name (Retail pipeline)
                     	sh 'python3 -m venv retail_pipeline_venv'
                     	// Upgrade pip and install pipenv in the virtual environment
