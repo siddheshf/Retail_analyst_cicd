@@ -18,8 +18,17 @@ pipeline {
                     	// sh './retail_pipeline_venv/bin/pip install pipenv'
 			sh '''
 			        set -eux
-            		python3 --version
-                    pip3 install --user pipenv
+                    python3 --version
+
+                    # Upgrade pip (locally)
+                    python3 -m pip install --user --upgrade pip
+
+                    # Install pipenv locally for current user
+                    python3 -m pip install --user pipenv
+
+                    # Add user-level binaries to PATH (needed for pipenv to run)
+                    export PATH=$HOME/.local/bin:$PATH
+
                     pipenv --version
 			'''
                 }
