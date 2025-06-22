@@ -1,9 +1,5 @@
 pipeline {
-    agent {
-        docker {
-            image 'python:3.11'  // Official image
-        }
-    }
+    agent any
     
     environment {
         LABS = credentials('lab-cred')
