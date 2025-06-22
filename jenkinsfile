@@ -12,7 +12,7 @@ pipeline {
                 echo "Dependecies installed"
             }
         }
-        stage('Test') {
+        stage('Updated Test') {
             steps {
                 echo "Test phase"
             }
