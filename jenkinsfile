@@ -20,16 +20,14 @@ pipeline {
 			set -eux
             		which python3
             		python3 --version
-			apt install python3.11-venv
-            		python3 -m venv retail_pipeline_venv
-
 			# Try installing venv if it's missing
-            		if ! python3 -m venv --help > /dev/null 2>&1; then
-                	echo "python3.11-venv not installed. Installing..."
-                	sudo apt update
-                	sudo apt install -y python 3.11-venv
+    			if ! python3 -m venv --help > /dev/null 2>&1; then
+        			echo "python3.11-venv not installed. Installing..."
+        			sudo apt update
+        			sudo DEBIAN_FRONTEND=noninteractive apt install -y python3.11-venv
+				apt install python3.11-venv
+            			python3 -m venv retail_pipeline_venv
             		fi
-
             		python3 -m venv retail_pipeline_venv
             		./retail_pipeline_venv/bin/pip install --upgrade pip
             		./retail_pipeline_venv/bin/pip install pipenv
