@@ -21,15 +21,16 @@ pipeline {
                     python3 --version
 
                     # Upgrade pip (locally)
-                    python3 -m pip install --user --upgrade pip
+                    python3 -m venv retail_pipeline_venv
 
-                    # Install pipenv locally for current user
-                    python3 -m pip install --user pipenv
+                    # Upgrade pip inside the venv
+                    ./retail_pipeline_venv/bin/pip install --upgrade pip
 
-                    # Add user-level binaries to PATH (needed for pipenv to run)
-                    export PATH=$HOME/.local/bin:$PATH
+                    # Install pipenv inside the venv
+                    ./retail_pipeline_venv/bin/pip install pipenv
 
-                    pipenv --version
+                    # Check installed version
+                    ./retail_pipeline_venv/bin/pipenv --version
 			'''
                 }
             }
